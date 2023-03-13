@@ -1,0 +1,25 @@
+.country {
+  border: 1px solid red;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: 130px;
+}
+
+.country:nth-child(even) {
+  background-color: #436ab1;
+}
+
+.country:nth-child(odd) {
+  background-color: #385894;
+}
+
+.flag {
+  width: 50%;
+}
+
+.countryName {
+  margin: 0;
+}

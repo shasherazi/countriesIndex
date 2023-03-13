@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCountries } from '../redux/countries/countriesSlice';
+import Country from './Country';
+import styles from '../styles/Countries.module.css';
 
 const Countries = () => {
   const dispatch = useDispatch();
@@ -15,14 +17,16 @@ const Countries = () => {
   return (
     <div>
       <h1>Countries</h1>
-      <ul>
+      <ul className={styles.countries}>
         {countries.map((country) => (
-          <li key={country.name}>
-            {country.name}
-            {country.population}
-          </li>
+          <Country
+            key={country.name}
+            name={country.name}
+            flagEmoji={country.flagEmoji}
+            flagUrl={country.flagUrl}
+            flagAlt={country.flagAlt}
+          />
         ))}
-        {countries.length === 0 ? <li>Loading...</li> : countries.length}
       </ul>
     </div>
   );

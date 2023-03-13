@@ -8,6 +8,9 @@ export const fetchCountries = createAsyncThunk('countries/fetchCountries', async
   return response.data.map((country) => ({
     name: country.name.common,
     population: country.population,
+    flagEmoji: country.flag,
+    flagUrl: country.flags.png,
+    flagAlt: country.flags.alt,
   }));
 });
 
