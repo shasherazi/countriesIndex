@@ -12,6 +12,7 @@ export const fetchCountries = createAsyncThunk('countries/fetchCountries', async
     flagPng: country.flags.png,
     flagSvg: country.flags.svg,
     flagAlt: country.flags.alt,
+    continent: country.continents[0],
   }));
 });
 
