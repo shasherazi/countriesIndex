@@ -26,6 +26,10 @@
   font-weight: bold;
 }
 
+.detailValue {
+  font-size: 1.5rem;
+}
+
 .timezone::after {
   content: ', ';
 }
