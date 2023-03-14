@@ -17,6 +17,18 @@ const Countries = () => {
   return (
     <div>
       <h1 className={styles.title}>Countries</h1>
+      <div className={styles.dropdown}>
+        <select name="continents" id="continents" className={styles.select}>
+          <option value="all">All</option>
+          <option value="Africa">Africa</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="North America">North America</option>
+          <option value="Oceania">Oceania</option>
+          <option value="South America">South America</option>
+          <option value="Antarctica">Antarctica</option>
+        </select>
+      </div>
       <ul className={styles.countries}>
         {countries.map((country) => (
           <Country
