@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCountries } from '../redux/countries/countriesSlice';
 import Country from './Country';
@@ -7,6 +7,8 @@ import styles from '../styles/Countries.module.css';
 const Countries = () => {
   const dispatch = useDispatch();
   const countries = useSelector((state) => state.countries);
+
+  const [continent, setContinent] = useState('all');
 
   useEffect(() => {
     if (countries.length === 0) {
@@ -18,7 +20,12 @@ const Countries = () => {
     <div>
       <h1 className={styles.title}>Countries</h1>
       <div className={styles.dropdown}>
-        <select name="continents" id="continents" className={styles.select}>
+        <select
+          name="continents"
+          id="continents"
+          className={styles.select}
+          onChange={(e) => setContinent(e.target.value)}
+        >
           <option value="all">All</option>
           <option value="Africa">Africa</option>
           <option value="Asia">Asia</option>
@@ -30,7 +37,12 @@ const Countries = () => {
         </select>
       </div>
       <ul className={styles.countries}>
-        {countries.map((country) => (
+        {countries.filter((country) => {
+          if (continent === 'all') {
+            return country;
+          }
+          return country.continent === continent;
+        }).map((country) => (
           <Country
             key={country.name}
             name={country.name}
