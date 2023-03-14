@@ -1,5 +1,4 @@
 .country {
-  /* border: 1px solid red; */
   color: white;
   display: flex;
   flex-direction: column;
@@ -21,4 +20,9 @@
 
 .countryName {
   margin: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
 }

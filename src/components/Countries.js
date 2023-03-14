@@ -23,8 +23,6 @@ const Countries = () => {
             key={country.name}
             name={country.name}
             flagEmoji={country.flagEmoji}
-            flagUrl={country.flagUrl}
-            flagAlt={country.flagAlt}
           />
         ))}
       </ul>

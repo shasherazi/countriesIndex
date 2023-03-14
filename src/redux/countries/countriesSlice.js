@@ -9,7 +9,8 @@ export const fetchCountries = createAsyncThunk('countries/fetchCountries', async
     name: country.name.common,
     population: country.population,
     flagEmoji: country.flag,
-    flagUrl: country.flags.png,
+    flagPng: country.flags.png,
+    flagSvg: country.flags.svg,
     flagAlt: country.flags.alt,
   }));
 });
