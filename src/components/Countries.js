@@ -16,7 +16,7 @@ const Countries = () => {
 
   return (
     <div>
-      <h1>Countries</h1>
+      <h1 className={styles.title}>Countries</h1>
       <ul className={styles.countries}>
         {countries.map((country) => (
           <Country
