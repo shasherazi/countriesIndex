@@ -9,6 +9,9 @@ export const fetchCountryDetails = createAsyncThunk('countryDetails/fetchCountry
   return {
     name: country.name.common,
     population: country.population,
+    capital: country.capital[0],
+    area: country.area,
+    timezones: country.timezones,
     flagEmoji: country.flag,
     flagPng: country.flags.png,
     flagSvg: country.flags.svg,
@@ -19,10 +22,14 @@ export const fetchCountryDetails = createAsyncThunk('countryDetails/fetchCountry
 const countryDetailsSlice = createSlice({
   name: 'countryDetails',
   initialState,
-  reducers: {},
+  reducers: {
+    clearCountryDetails: () => initialState,
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchCountryDetails.fulfilled, (state, action) => action.payload);
   },
 });
+
+export const { clearCountryDetails } = countryDetailsSlice.actions;
 
 export default countryDetailsSlice.reducer;
