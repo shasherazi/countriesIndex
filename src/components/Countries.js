@@ -22,6 +22,7 @@ const Countries = () => {
           <Country
             key={country.name}
             name={country.name}
+            continent={country.continent}
             flagEmoji={country.flagEmoji}
           />
         ))}
