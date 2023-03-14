@@ -4,11 +4,11 @@ import styles from '../styles/Navbar.module.css';
 
 const Navbar = () => {
   const location = useLocation();
+
   return (
     <div className={styles.navbar}>
       <NavLink to="/" className={styles.link}>
         { location.pathname !== '/' && <IoChevronBack className={styles.back} /> }
-        {/* <IoChevronBack className={styles.back} /> */}
       </NavLink>
       <Outlet />
     </div>
