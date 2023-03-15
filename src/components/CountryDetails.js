@@ -21,8 +21,10 @@ const CountryDetails = () => {
     <>
       {country && (
       <div className={styles.countryDetails}>
-        <img src={country.flagSvg} alt={country.flagAlt} className={styles.flag} />
-        <h1 className={styles.name}>{country.name}</h1>
+        <div className={styles.flagContainer}>
+          <img src={country.flagSvg} alt={country.flagAlt} className={styles.flag} />
+          <h1 className={styles.name}>{country.name}</h1>
+        </div>
         <ul className={styles.details}>
           <li className={styles.detail}>
             <span className={styles.detailName}>Capital:</span>
@@ -32,7 +34,7 @@ const CountryDetails = () => {
           <li className={styles.detail}>
             <span className={styles.detailName}>Population:</span>
             {' '}
-            <span className={styles.detailValue}>{country.population}</span>
+            <span className={styles.detailValue}>{country.population.toLocaleString()}</span>
           </li>
           <li className={styles.detail}>
             <span className={styles.detailName}>Area:</span>
