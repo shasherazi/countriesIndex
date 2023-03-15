@@ -26,6 +26,7 @@
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -156,6 +157,14 @@ Feel free to check the [issues page](../../issues/).
 ## ⭐️ Show your support <a name="support"></a>
 
 If you like this project please give it a ⭐️!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio) for the original design. You can see the original design [here](<https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)>).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
