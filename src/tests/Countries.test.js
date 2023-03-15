@@ -12,4 +12,22 @@ describe('Countries', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should have a select element', () => {
+    const tree = renderer.create(
+      <Provider store={store}>
+        <Countries />
+      </Provider>,
+    ).root;
+    expect(tree.findByType('select')).toBeTruthy();
+  });
+
+  it('should have a select element with 8 options', () => {
+    const tree = renderer.create(
+      <Provider store={store}>
+        <Countries />
+      </Provider>,
+    ).root;
+    expect(tree.findAllByType('option').length).toBe(8);
+  });
 });
