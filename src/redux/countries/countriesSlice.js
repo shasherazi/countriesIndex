@@ -13,6 +13,7 @@ export const fetchCountries = createAsyncThunk('countries/fetchCountries', async
     flagSvg: country.flags.svg,
     flagAlt: country.flags.alt,
     continent: country.continents[0],
+    timezones: country.timezones,
   }));
 });
 
