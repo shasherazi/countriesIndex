@@ -1,24 +1,25 @@
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchCountryDetails } from '../redux/countryDetails/countryDetailsSlice';
+import { fetchCountries } from '../redux/countries/countriesSlice';
 import styles from '../styles/CountryDetails.module.css';
 
 const CountryDetails = () => {
   const { countryId } = useParams();
   const dispatch = useDispatch();
-
-  const country = useSelector((state) => state.countryDetails);
+  const countries = useSelector((state) => state.countries);
 
   useEffect(() => {
-    if (Object.keys(country).length === 0) {
-      dispatch(fetchCountryDetails(countryId));
+    if (countries.length === 0) {
+      dispatch(fetchCountries());
     }
-  }, [country, dispatch, countryId]);
+  }, [countries, dispatch]);
+
+  const country = countries.find((c) => c.name === countryId);
 
   return (
     <>
-      {Object.keys(country).length !== 0 && (
+      {country && (
       <div className={styles.countryDetails}>
         <img src={country.flagSvg} alt={country.flagAlt} className={styles.flag} />
         <h1 className={styles.name}>{country.name}</h1>
