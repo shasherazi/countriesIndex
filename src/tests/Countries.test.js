@@ -1,4 +1,5 @@
 import { Provider } from 'react-redux';
+import { screen, render } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import store from '../redux/store';
 import Countries from '../components/Countries';
@@ -14,20 +15,20 @@ describe('Countries', () => {
   });
 
   it('should have a select element', () => {
-    const tree = renderer.create(
+    render(
       <Provider store={store}>
         <Countries />
       </Provider>,
-    ).root;
-    expect(tree.findByType('select')).toBeTruthy();
+    );
+    expect(screen.getByRole('combobox')).toBeTruthy();
   });
 
   it('should have a select element with 8 options', () => {
-    const tree = renderer.create(
+    render(
       <Provider store={store}>
         <Countries />
       </Provider>,
-    ).root;
-    expect(tree.findAllByType('option').length).toBe(8);
+    );
+    expect(screen.getAllByRole('option').length).toBe(8);
   });
 });
